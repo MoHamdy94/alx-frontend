@@ -1,4 +1,4 @@
-/* Grid styling and custom variables */
+/* Add border to the button */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -411,7 +411,7 @@
     --nav-item-display: inline-block;
     --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: var(--color-primary);
-
+  
     --button-display: inline-block;
     --button-padding: 1.5rem 3rem;
     --button-border: 0.2rem solid var(--color-primary);
@@ -441,20 +441,6 @@
     font-weight: var(--font-weight-bold);
   }
   
-button {
-    display: var(--button-display);
-    padding: var(--button-padding);
-    border: var(--button-border);
-    font-size: var(--button-font-size);
-    color: var(--button-color);
-    text-decoration: var(--button-text-decoration);
-}
-button:hover{
-    color: var(--button-hover-color);
-    text-decoration: var(--button-hover-text-decoration);
-    background: var(--button-hover-background);
-}
-
   a:link {
     color: var(--text-color);
     text-decoration: none;
@@ -472,12 +458,23 @@ button:hover{
     background-color: var(--color-light-grey);
   }
   
-  .visually-hidden {
-    display: none;
+  .button {
+    display: var(--button-display);
+    padding: var(--button-padding);
+    border: var(--button-border);
+    font-size: var(--button-font-size);
+    color: var(--button-color);
+    text-decoration: var(--button-text-decoration);
   }
   
-  .card-category {
-    color: var(--color-primary);
+  .button:hover {
+    color: var(--button-hover-color);
+    text-decoration: var(--button-hover-text-decoration);
+    background-color: var(--button-hover-background);
+  }
+  
+  .visually-hidden {
+    display: none;
   }
   
   .section {
@@ -513,20 +510,18 @@ button:hover{
     font-weight: var(--font-weight-bold);
     margin: var(--section-tagline-margin);
   }
+  
   [data-section-theme="dark"] {
-    --button-color: var(--color-white);
     --text-color: var(--color-white);
     --section-title-color: var(--color-white);
     background-color: var(--color-black);
+    --button-color: var(--color-white);
   }
+  
   .container {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  .footer {
-    padding: var(--footer-padding);
   }
   
   .navbar-menu {
@@ -558,6 +553,12 @@ button:hover{
     color: var(--nav-item-link-hover);
   }
   
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
   ul.row {
     margin: 0;
     padding: 0;
@@ -577,38 +578,48 @@ button:hover{
     width: 50%;
   }
   
+  .footer {
+    padding: var(--footer-padding);
+  }
+  
   .footer-copyright {
     margin: 0;
     font-size: var(--font-size-small);
     color: var(--text-color);
   }
-  .footer-address{
-    color: var(--text-color);
-  }
-  .social-link{
-    display: block;
-  }
-  .social-link > svg{
-    fill: var(--text-color);
-  }
+  
   .footer ul {
     text-align: right;
   }
-  .row::after {
-    content: "";
-    display: table;
-    clear: both;
+  
+  .footer-address {
+    color: var(--text-color);
   }
-.card-services .card-title {
-  margin: 0;
-}
-.card-services a {
-  display: block;
-  padding: 2rem;
-  background-color: var(--color-light-grey);
-}
-.card-services a:hover {
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  text-decoration: none;
-}
+  
+  .social-link {
+    display: block;
+  }
+  
+  .social-link > svg {
+    fill: var(--text-color);
+  }
+  
+  .card-category {
+    color: var(--color-primary);
+  }
+  
+  .card-services .card-title {
+    margin: 0;
+  }
+  
+  .card-services a {
+    display: block;
+    padding: 2rem;
+    background-color: var(--color-light-grey);
+  }
+  
+  .card-services a:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    text-decoration: none;
+  }
